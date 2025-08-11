@@ -9,10 +9,10 @@
     <img src="https://i.imgur.com/ngVdVdA.png" alt="StackBot" width="200" height="200">
   </a>
 
-  <h3 align="center">Desc iption</h3>
+  <h3 align="center">Description</h3>
 
   <p align="center">
-    A Discord bot prov iding solddutions for managing Old School RuneScape Clans, built with <a href="https://discord.js.org">Discord.js</a>, and <a href="https://nodejs.org/en">Node.js</a>. This bot is plug and play once downloaded and ideal for self hosting on a computer you can keep on. 
+    A Discord bot prov iding solutions for managing Old School RuneScape Clans, built with <a href="https://discord.js.org">Discord.js</a>, and <a href="https://nodejs.org/en">Node.js</a>. This bot is plug and play once downloaded and ideal for self hosting on a computer you can keep on. 
     <br />
     <br />
     <a href="https://github.com/StackBot-Team/old-version-stackbot/issues">Report Bug</a>
@@ -21,12 +21,11 @@
   </p>
 </p>
 
-## <img src="https://cdn.discordapp.com/emojis/852881450667081728.gif" width="20px" height="20px">》Feature
+## <img src="https://cdn.discordapp.com/emojis/852881450667081728.gif" width="20px" height="20px">》Features
 - [x] Slash Commands 
-- [x] Upto date with Discord.js v14
-- [x] Utility Commands
-- [x] Fun Commands
-- [x] Easy to use
+- [x] Easy Wise Old Man event scheduling
+- [x] Member Role Syncing
+- [x] OSRS Player Info Commands
 - [x] And much more
 
 # APIs & Integrations
@@ -97,7 +96,7 @@ Below is a quick overview of the external APIs this bot talks to:
    * Generated URL
       * Copy and add bot to your guild
 
-## Cloud Hosting
+## Cloud Hosting (Optional)
 1. **Caution**
 
    If you decide to host in the cloud, the data folder will need to be excluded in futuer pulls to your cloud host to avoid pulling the old clan member. 
@@ -119,4 +118,4 @@ Below is a quick overview of the external APIs this bot talks to:
     npm run start
 
 ## Support
-1. [discord.gg/stackbot]()"# example1" 
+1. [discord.gg/stackbot]()
