@@ -1,0 +1,11 @@
+{
+  "mod_application": [
+    "Have you ever moderated or helped manage another clan or community?",
+    "Are there any areas of the clan you're especially interested in supporting?",
+    "How comfortable are you with using moderation tools on discord and in game and are there any tools you'd want training on?"
+  ],
+  "event_coordinator": [
+    "Have you ever helped run or organize events in another clan or community?",
+    "Do you have any experience with using Discord tools (e.g., bots, embeds, event posts)?"
+  ]
+}

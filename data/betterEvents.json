@@ -1,0 +1,16 @@
+{
+  "1356688952035377293": {
+    "title": "Sample Event",
+    "startTime": 1743534000,
+    "duration": "2 hours",
+    "channelId": "1226238537444360212",
+    "creatorUsername": "nocringe",
+    "rsvp": {
+      "accepted": [],
+      "declined": [
+        "1026192544377356298"
+      ],
+      "tentative": []
+    }
+  }
+}

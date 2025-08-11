@@ -1,0 +1,67 @@
+[
+  {
+    "label": "Beast",
+    "value": "1287580336363933727",
+    "description": "Infernal Cape + Quiver + Master Tier CAs + 2K Total Lvl"
+  },
+  {
+    "label": "Maxed",
+    "value": "1226542596294443171",
+    "description": "Achieved the highest possible total level."
+  },
+  {
+    "label": "Infernal Cape",
+    "value": "1226541476058501304",
+    "description": "Obtained an Infernal Cape"
+  },
+  {
+    "label": "Combat Achievements",
+    "value": "1334576742186356757",
+    "description": "Reached the Elite Tier of CAs"
+  },
+  {
+    "label": "Raids Enthusiast",
+    "value": "1334576960529240094",
+    "description": "Has 250 total raids kc."
+  },
+  {
+    "label": "Achievement Diaries",
+    "value": "1334577101004607568",
+    "description": "Req: Diary Cape"
+  },
+  {
+    "label": "Quest Cape",
+    "value": "1226542068541952133",
+    "description": "Has all Quests Completed."
+  },
+  {
+    "label": "Collection Logger",
+    "value": "1334577217954517042",
+    "description": "Has 500 Collection Logs"
+  },
+  {
+    "label": "Quester",
+    "value": "1334577466156646430",
+    "description": "Has 200 Quest Points and 2 Grandmaster Quests done."
+  },
+  {
+    "label": "Fire Cape",
+    "value": "1226540411926089789",
+    "description": "Has obtained a Fire Cape after defeating Jad."
+  },
+  {
+    "label": "PVP Enthusiast",
+    "value": "1226541519259963483",
+    "description": "For the PVP enthusiasts. (No requirements needed)."
+  },
+  {
+    "label": "PVM Enthusiast",
+    "value": "1334584294496145580",
+    "description": "For the PVM enthusiasts. (No requirements needed)."
+  },
+  {
+    "label": "Skilling Focused",
+    "value": "1334584419004190760",
+    "description": "For anyone who loves Skilling. (No requirements needed)."
+  }
+]
