@@ -166,19 +166,6 @@ client.on('interactionCreate', async interaction => {
     logMessageId: '987654321012345678'    
   }
 */
-client.on('interactionCreate', async interaction => {
-   if (interaction.isAutocomplete()) {
-      const command = interaction.client.commands.get(interaction.commandName);
-      if (!command || typeof command.autocomplete !== 'function') return;
-
-
-      try {
-         await command.autocomplete(interaction);
-      } catch (error) {
-         console.error(`Error in autocomplete for [${interaction.commandName}]:`, error);
-      }
-   }
-})
 
 const raffleDataPath = path.join(__dirname, './data/raffleEntries.json');
 const recordPath = path.join(__dirname, './data/raffleStatsRecord.json');
@@ -196,22 +183,33 @@ const { handleCofferHolders } = require('./utils/handlers/buttons/cofferHoldersB
 const { handleToggleBtn } = require('./utils/handlers/buttons/cofferToggleBtn.js');
 
 client.on('interactionCreate', async interaction => {
-
-   if (interaction.isButton()) {
-      switch (interaction.customId) {
-         case 'coffer_holders':
-            return handleCofferHolders(interaction);
-         case 'toggle_coffer_format':
-            return handleToggleBtn(interaction);
-         case 'end_btn':
-            return raffleEndBtnHandler(interaction);
-         case 'reload_btn':
-            return raffleReloadHandler(interaction);
-         case 'draw_btn':
-            return raffleDrawBtnHandler(interaction);
-         case 'overflow_btn':
-            return overFlowBtnHandler(interaction);
+   try {
+      if (interaction.isButton()) {
+         switch (interaction.customId) {
+            case 'coffer_holders':
+               return handleCofferHolders(interaction);
+            case 'toggle_coffer_format':
+               return handleToggleBtn(interaction);
+            case 'end_btn':
+               return raffleEndBtnHandler(interaction);
+            case 'reload_btn':
+               return raffleReloadHandler(interaction);
+            case 'draw_btn':
+               return raffleDrawBtnHandler(interaction);
+            case 'overflow_btn':
+               return overFlowBtnHandler(interaction);
+         }
       }
+
+      if (interaction.isAutocomplete()) {
+         const command = interaction.client.commands.get(interaction.commandName);
+         if (command?.autocomplete) {
+            await command.autocomplete(interaction);
+         }
+      }
+
+   } catch (error) {
+      console.error(`Error handling interaction [${interaction.type}]`, error);
    }
 });
 
@@ -325,36 +323,7 @@ client.on('messageCreate', async message => {
 
 })
 
-const { Boss } = require('@wise-old-man/utils');
-const bossMetrics = Object.values(Boss);
 
-client.on('interactionCreate', async interaction => {
-   if (!interaction.isAutocomplete()) return;
-   if (interaction.commandName === 'create-boss-event') {
-      try {
-         const focusedOption = interaction.options.getFocused(true);
-         const filtered = bossMetrics.filter(boss =>
-            boss.replace(/_/g, ' ').toLowerCase().includes(focusedOption.value.toLowerCase())
-         );
-         await interaction.respond(
-            filtered.slice(0, 25).map(boss => ({
-               name: boss.replace(/_/g, ' '),
-               value: boss,
-            }))
-         );
-      } catch (error) {
-         console.error('Error in autocomplete:', error);
-      }
-   }
-
-   if (interaction.commandName === 'player') {
-      try {
-         await autocomplete(interaction)
-      } catch (error) {
-         console.error('Error handling autocomplete:', error);
-      }
-   }
-});
 
 
 const EVENTS_PATH = path.resolve(__dirname, 'data/betterEvents.json');
@@ -1351,29 +1320,6 @@ client.on('messageCreate', async message => {
 });
 
 client.on(Events.InteractionCreate, async interaction => {
-   // cancel button handler
-   if (interaction.isButton() && interaction.customId === 'cancel_app') {
-      if (!inProgress.has(interaction.user.id)) {
-         return interaction.reply({
-            content: 'You don’t have an application in progress.',
-            ephemeral: true
-         });
-      }
-
-      // Tear down session
-      inProgress.delete(interaction.user.id);
-
-      // reset dropdown in one call
-      await interaction.update({
-         components: [buildDropdown()]
-      });
-
-      // let them know it’s cancelled
-      return interaction.followUp({
-         content: '✅ Application cancelled.',
-         ephemeral: true
-      });
-   }
 
    //  Accept/Deny
    if (
