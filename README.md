@@ -106,6 +106,16 @@ Below is a quick overview of the external APIs this bot talks to:
     git update-index --skip-worktree ./data/output.json
     git pull origin main
    
+## Emoji Use
+If making your own copy of the bot you'll need to add these emoji's to your discord server or switch them out for those of your choice.
+1. Source: https://emoji.gg/user/never_see
+
+![Emoji's Used](https://i.imgur.com/KnME6TB.png)
+
+To add emoji's in embeds: 
+* Type and select the emoji: ```:emoji:```
+* Add a back slash to the front of the emoji: ```\:emoji:```
+* Copy the result - example: ```<:emoji:12345678910>```
 
 ## Running
 
