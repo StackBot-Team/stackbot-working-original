@@ -181,6 +181,7 @@ const { raffleReloadHandler } = require('./utils/handlers/buttons/raffleReloadBt
 const { overFlowBtnHandler } = require('./utils/handlers/buttons/cofferOverflowBtn.js');
 const { handleCofferHolders } = require('./utils/handlers/buttons/cofferHoldersBtn.js');
 const { handleToggleBtn } = require('./utils/handlers/buttons/cofferToggleBtn.js');
+const { rafflePriceBtnHanlder } = require('./utils/handlers/buttons/rafflePriceBtn.js')
 
 client.on('interactionCreate', async interaction => {
    try {
@@ -198,6 +199,8 @@ client.on('interactionCreate', async interaction => {
                return raffleDrawBtnHandler(interaction);
             case 'overflow_btn':
                return overFlowBtnHandler(interaction);
+            case 'raffle_price_btn':
+               return rafflePriceBtnHanlder(interaction)
          }
       }
 
@@ -647,6 +650,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
                }
             }
          }
+      }
+      else if (interaction.customId === 'ticket_modal') {
+         await tickPriceModalHandler(interaction);
       }
    }
 });
