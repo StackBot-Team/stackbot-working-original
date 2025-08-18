@@ -181,7 +181,8 @@ const { raffleReloadHandler } = require('./utils/handlers/buttons/raffleReloadBt
 const { overFlowBtnHandler } = require('./utils/handlers/buttons/cofferOverflowBtn.js');
 const { handleCofferHolders } = require('./utils/handlers/buttons/cofferHoldersBtn.js');
 const { handleToggleBtn } = require('./utils/handlers/buttons/cofferToggleBtn.js');
-const { rafflePriceBtnHanlder } = require('./utils/handlers/buttons/rafflePriceBtn.js')
+const { rafflePriceBtnHanlder } = require('./utils/handlers/buttons/rafflePriceBtn.js');
+const { tickPriceModalHandler } = require('./utils/handlers/modals/ticketPriceMdl.js');
 
 client.on('interactionCreate', async interaction => {
    try {
